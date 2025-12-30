@@ -1,0 +1,101 @@
+@font-face {
+    font-family: 'Pretendard';
+    src: url('../fonts/PretendardVariable.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Nanum Square Neo';
+    src: url('../fonts/NanumSquareNeo-Variable.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BM JUA';
+    src: url('../fonts/BMJUA.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}    
+
+@font-face {
+    font-family: 'Gmarket Sans';
+    src: url('../fonts/GmarketSansTTFBold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}    
+
+@font-face {
+    font-family: 'Gmarket Sans';
+    src: url('../fonts/GmarketSansTTFMedium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}    
+
+@font-face {
+    font-family: 'Gmarket Sans';
+    src: url('../fonts/GmarketSansTTFLight.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}    
+
+/* @font-face {
+    font-family: 'Noto Sans KR';
+    src: url('../fonts/NotoSansKR-VariableFont_wght.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+} */    
+
+/* Box sizing 통일 */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 기본 마진/패딩 제거 */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* 반응형 이미지 */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 폼 요소 폰트 상속 */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 텍스트 overflow 처리 */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 해더 및 푸터 높이 변수 설정 */
+:root {
+  --header-height: 60px;
+  --footer-height: 40px;
+  --sidebar-width: 250px;
+}
+
+/* 루트 스타일 */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+:root {
+  --tblr-primary: #F11D46;
+  --tblr-font-sans-serif: "Pretendard";
+  /* , "Gmarket Sans", "Noto Sans KR", "Nanum Square Neo", "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; */
+}

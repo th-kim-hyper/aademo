@@ -1,0 +1,55 @@
+@font-face {
+    font-family: 'Pretendard';
+    src: url('../fonts/PretendardVariable.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Nanum Square Neo';
+    src: url('../fonts/NanumSquareNeo-Variable.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BM JUA';
+    src: url('../fonts/BMJUA.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}    
+
+@font-face {
+    font-family: 'Gmarket Sans';
+    src: url('../fonts/GmarketSansTTFBold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}    
+
+@font-face {
+    font-family: 'Gmarket Sans';
+    src: url('../fonts/GmarketSansTTFMedium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}    
+
+@font-face {
+    font-family: 'Gmarket Sans';
+    src: url('../fonts/GmarketSansTTFLight.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}    
+
+/* @font-face {
+    font-family: 'Noto Sans KR';
+    src: url('../fonts/NotoSansKR-VariableFont_wght.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+} */ 

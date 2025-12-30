@@ -1,0 +1,32 @@
+/* Box sizing 통일 */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 기본 마진/패딩 제거 */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* 반응형 이미지 */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 폼 요소 폰트 상속 */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 텍스트 overflow 처리 */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 루트 스타일 */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
