@@ -1,59 +1,137 @@
 import templateManager from "./template-manager.js";
 
-await templateManager.ready;
-// const templates = templateManager.templates;
-const headersTemplate = await templateManager.getTemplateById(
-  "header-template"
-);
-console.log("Templates available in HeaderElement:", headersTemplate);
-
-class HeaderElement extends HTMLElement {
-  ready = null;
-//   templateHTML = null;
-  tagHTML = null;
+class TemplatedElement extends HTMLElement {
+  static get observedAttributes() {
+    return ["template-id"];
+  }
 
   constructor() {
     super();
-    console.log("HeaderElement constructor called:", this.innerHTML);
-    this.ready = templateManager
-      .getTemplateById("header-template")
-      .then((templateHTML) => {
-        console.log("HeaderElement templateHTML loaded and set", templateHTML);
-        this.tagHTML = this.innerHTML;
-        this.innerHTML = templateHTML;
-        // this.innerHTML = templateHTML;
-      });
+    console.log("template-id:", this.getAttribute("template-id"));
+  }
+
+  // 2. 속성 값이 변경될 때마다 호출됩니다. (Setter와 유사)
+  attributeChangedCallback(name, oldValue, newValue) {
+    console.log(`${name} 속성이 ${oldValue}에서 ${newValue}로 변경되었습니다.`);
+    // this.render();
   }
 
   async connectedCallback() {
-    await this.ready.then(() => {
-      console.log("HeaderElement ready resolved in connectedCallback");
+    const templateId = this.getAttribute("template-id");
+    const html = await templateManager.getTemplateById(templateId);
+    const element = document.createElement("div");
+    element.innerHTML = html;
+    const slots = element.querySelectorAll("slot");
+    slots.forEach((slot) => {
+      const name = slot.getAttribute("name");
+      if (name) {
+        const assignedElements = this.querySelectorAll(`[slot="${name}"]`);
+        assignedElements.forEach((el) => {
+          slot.replaceWith(el);
+        });
+      }
     });
-    // this.innerHTML = this.templateHTML;
-    console.log("HeaderElement content set from templateHTML");
+    this.innerHTML = element.innerHTML;
   }
-  //   const element = document.createElement("div");
-  //   element.innerHTML = this.tagHTML;
-  //   const slots = element.querySelectorAll("slot");
-  //   slots.forEach((slot) => {
-  //     const name = slot.getAttribute("name");
-  //     if (name) {
-  //       const assignedElements = this.querySelectorAll(`[slot="${name}"]`);
-  //       assignedElements.forEach((el) => {
-  //         slot.replaceWith(el);
-  //       });
-  //     }
-  //   });
-  //   const $p = this.querySelector("h1");
-  //   if ($p) {
-  //     $p.style.cursor = "pointer";
-  //     $p.onclick = () => {
-  //       console.log("HeaderElement paragraph clicked");
-  //     };
-  //   }
-  //   console.log("HeaderElement connected to the DOM");
 }
 
-// customElements.define('header-element', HeaderElement);
+class HeaderElement extends HTMLElement {
+  constructor() {
+    super();
+  }
 
-export { HeaderElement };
+  async connectedCallback() {
+    const templateHTML = await templateManager.getTemplateById(
+      "header-template"
+    );
+    const element = document.createElement("div");
+    element.innerHTML = templateHTML;
+    const slots = element.querySelectorAll("slot");
+    slots.forEach((slot) => {
+      const name = slot.getAttribute("name");
+      if (name) {
+        const assignedElements = this.querySelectorAll(`[slot="${name}"]`);
+        assignedElements.forEach((el) => {
+          slot.replaceWith(el);
+        });
+      }
+    });
+    this.innerHTML = element.innerHTML;
+  }
+}
+
+class SidebarElement extends HTMLElement {
+  constructor() {
+    super();
+  }
+
+  async connectedCallback() {
+    const templateHTML = await templateManager.getTemplateById(
+      "sidebar-template"
+    );
+    const element = document.createElement("div");
+    element.innerHTML = templateHTML;
+    const slots = element.querySelectorAll("slot");
+    slots.forEach((slot) => {
+      const name = slot.getAttribute("name");
+      if (name) {
+        const assignedElements = this.querySelectorAll(`[slot="${name}"]`);
+        assignedElements.forEach((el) => {
+          slot.replaceWith(el);
+        });
+      }
+    });
+    this.innerHTML = element.innerHTML;
+  }
+}
+
+class MainElement extends HTMLElement {
+  constructor() {
+    super();
+  }
+
+  async connectedCallback() {
+    const templateHTML = await templateManager.getTemplateById("main-template");
+    const element = document.createElement("div");
+    element.innerHTML = templateHTML;
+    const slots = element.querySelectorAll("slot");
+    slots.forEach((slot) => {
+      const name = slot.getAttribute("name");
+      if (name) {
+        const assignedElements = this.querySelectorAll(`[slot="${name}"]`);
+        assignedElements.forEach((el) => {
+          slot.replaceWith(el);
+        });
+      }
+    });
+    this.innerHTML = element.innerHTML;
+  }
+}
+
+class FooterElement extends HTMLElement {
+  constructor() {
+    super();
+  }
+
+  async connectedCallback() {
+    const templateHTML = await templateManager.getTemplateById(
+      "footer-template"
+    );
+    const element = document.createElement("div");
+    element.innerHTML = templateHTML;
+    const slots = element.querySelectorAll("slot");
+    slots.forEach((slot) => {
+      const name = slot.getAttribute("name");
+      if (name) {
+        const assignedElements = this.querySelectorAll(`[slot="${name}"]`);
+        assignedElements.forEach((el) => {
+          slot.replaceWith(el);
+        });
+      }
+    });
+    this.innerHTML = element.innerHTML;
+    console.log("HeaderElement content set from templateHTML");
+  }
+}
+
+export { TemplatedElement, HeaderElement, SidebarElement, MainElement, FooterElement };

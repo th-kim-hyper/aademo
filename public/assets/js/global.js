@@ -1,22 +1,11 @@
-import { HeaderElement } from './custom-elements.js';
-
-// var $footer = document.querySelector('footer');
-// console.log('Global JS loaded - footer element:', $footer);
-
-// customElements.whenDefined('header-component').then(() => {
-//     console.log('header-component is defined');
-// });
-
-// customElements.define('header-element', HeaderElement);
-
-// document.addEventListener('DOMContentLoaded', function () {
-//     console.log('Global JS DOMContentLoaded fired');
-// });
-
+import { TemplatedElement,  HeaderElement, SidebarElement, MainElement, FooterElement } from './custom-elements.js';
 
 function init() {
+    customElements.define('templated-element', TemplatedElement);
     customElements.define('header-element', HeaderElement);
-    console.log('header-element defined');
+    customElements.define('sidebar-element', SidebarElement);
+    customElements.define('main-element', MainElement);
+    customElements.define('footer-element', FooterElement);
 }
 
 init();

@@ -1,169 +1,175 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
     <template id="header-template">
-        <!-- 고정 헤더 -->
-        <header class="header">
-            <div class="container-fluid">
-                <div class="d-flex justify-content-between align-items-center">
-                    <slot name="logo"><h1 class="h4 mb-0">애플리케이션 제목</h1></slot>
-                    <div>
-                        <button class="btn btn-outline-light btn-sm">로그인</button>
-                    </div>
-                </div>
+      <!-- 고정 헤더 -->
+      <header class="header">
+        <div class="container-fluid">
+          <div class="d-flex justify-content-between align-items-center">
+            <slot name="logo">애플리케이션 제목</slot>
+            <div>
+              <button class="btn btn-outline-light btn-sm">로그인</button>
             </div>
-        </header>
+          </div>
+        </div>
+      </header>
+    </template>
+    <template id="sidebar-template">
+      <aside class="sidebar">
+        <ul class="sidebar-nav">
+          <li><a href="#" class="active">대시보드</a></li>
+          <li><a href="#">프로젝트 관리</a></li>
+          <li><a href="#">모델 학습</a></li>
+          <li><a href="#">데이터 분석</a></li>
+          <li><a href="#">배치 작업</a></li>
+          <li><a href="#">API 문서</a></li>
+          <li><a href="#">설정</a></li>
+          <li><a href="#">사용자 관리</a></li>
+          <li><a href="#">로그 조회</a></li>
+          <li><a href="#">모니터링</a></li>
+          <li><a href="#">알림 설정</a></li>
+          <li><a href="#">보안 관리</a></li>
+          <li><a href="#">백업 및 복원</a></li>
+          <li><a href="#">시스템 정보</a></li>
+          <li><a href="#">도움말</a></li>
+        </ul>
+      </aside>
     </template>
     <template id="main-template">
-        <!-- 메인 래퍼 (사이드바 + 컨텐츠) -->
-        <div class="main-wrapper">
-            <!-- 사이드바 -->
-            <aside class="sidebar">
-                <ul class="sidebar-nav">
-                    <li><a href="#" class="active">대시보드</a></li>
-                    <li><a href="#">프로젝트 관리</a></li>
-                    <li><a href="#">모델 학습</a></li>
-                    <li><a href="#">데이터 분석</a></li>
-                    <li><a href="#">배치 작업</a></li>
-                    <li><a href="#">API 문서</a></li>
-                    <li><a href="#">설정</a></li>
-                    <li><a href="#">사용자 관리</a></li>
-                    <li><a href="#">로그 조회</a></li>
-                    <li><a href="#">모니터링</a></li>
-                    <li><a href="#">알림 설정</a></li>
-                    <li><a href="#">보안 관리</a></li>
-                    <li><a href="#">백업 및 복원</a></li>
-                    <li><a href="#">시스템 정보</a></li>
-                    <li><a href="#">도움말</a></li>
-                </ul>
-            </aside>
+      <!-- 메인 컨텐츠 -->
+      <main class="main-content">
+        <div class="container-fluid">
+          <h2 class="mb-4">대시보드</h2>
 
-            <!-- 메인 컨텐츠 -->
-            <main class="main-content">
-                <div class="container-fluid">
-                    <h2 class="mb-4">대시보드</h2>
-                    
-                    <div class="row">
-                        <div class="col-md-6 col-lg-3 mb-3">
-                            <div class="content-card">
-                                <h5 class="text-muted">총 프로젝트</h5>
-                                <h2 class="mb-0">24</h2>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-3 mb-3">
-                            <div class="content-card">
-                                <h5 class="text-muted">학습 중인 모델</h5>
-                                <h2 class="mb-0">7</h2>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-3 mb-3">
-                            <div class="content-card">
-                                <h5 class="text-muted">완료된 작업</h5>
-                                <h2 class="mb-0">156</h2>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-3 mb-3">
-                            <div class="content-card">
-                                <h5 class="text-muted">활성 사용자</h5>
-                                <h2 class="mb-0">12</h2>
-                            </div>
-                        </div>
-                    </div>
+          <div class="row">
+            <div class="col-md-6 col-lg-3 mb-3">
+              <div class="content-card">
+                <h5 class="text-muted">총 프로젝트</h5>
+                <h2 class="mb-0">24</h2>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-3">
+              <div class="content-card">
+                <h5 class="text-muted">학습 중인 모델</h5>
+                <h2 class="mb-0">7</h2>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-3">
+              <div class="content-card">
+                <h5 class="text-muted">완료된 작업</h5>
+                <h2 class="mb-0">156</h2>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-3">
+              <div class="content-card">
+                <h5 class="text-muted">활성 사용자</h5>
+                <h2 class="mb-0">12</h2>
+              </div>
+            </div>
+          </div>
 
-                    <div class="content-card">
-                        <h4 class="mb-3">최근 활동</h4>
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th>시간</th>
-                                    <th>작업</th>
-                                    <th>상태</th>
-                                    <th>사용자</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>10:25</td>
-                                    <td>모델 학습 시작</td>
-                                    <td><span class="badge bg-primary">진행중</span></td>
-                                    <td>홍길동</td>
-                                </tr>
-                                <tr>
-                                    <td>09:15</td>
-                                    <td>데이터 업로드</td>
-                                    <td><span class="badge bg-success">완료</span></td>
-                                    <td>김철수</td>
-                                </tr>
-                                <tr>
-                                    <td>08:45</td>
-                                    <td>API 배포</td>
-                                    <td><span class="badge bg-success">완료</span></td>
-                                    <td>이영희</td>
-                                </tr>
-                                <tr>
-                                    <td>07:30</td>
-                                    <td>배치 작업 실행</td>
-                                    <td><span class="badge bg-danger">실패</span></td>
-                                    <td>박민수</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+          <div class="content-card">
+            <h4 class="mb-3">최근 활동</h4>
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>시간</th>
+                  <th>작업</th>
+                  <th>상태</th>
+                  <th>사용자</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>10:25</td>
+                  <td>모델 학습 시작</td>
+                  <td><span class="badge bg-primary">진행중</span></td>
+                  <td>홍길동</td>
+                </tr>
+                <tr>
+                  <td>09:15</td>
+                  <td>데이터 업로드</td>
+                  <td><span class="badge bg-success">완료</span></td>
+                  <td>김철수</td>
+                </tr>
+                <tr>
+                  <td>08:45</td>
+                  <td>API 배포</td>
+                  <td><span class="badge bg-success">완료</span></td>
+                  <td>이영희</td>
+                </tr>
+                <tr>
+                  <td>07:30</td>
+                  <td>배치 작업 실행</td>
+                  <td><span class="badge bg-danger">실패</span></td>
+                  <td>박민수</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
-                    <div class="content-card">
-                        <h4 class="mb-3">시스템 리소스</h4>
-                        <div class="mb-3">
-                            <div class="d-flex justify-content-between mb-1">
-                                <span>CPU 사용률</span>
-                                <span>65%</span>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar bg-info" style="width: 65%"></div>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <div class="d-flex justify-content-between mb-1">
-                                <span>메모리 사용률</span>
-                                <span>78%</span>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar bg-warning" style="width: 78%"></div>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <div class="d-flex justify-content-between mb-1">
-                                <span>디스크 사용률</span>
-                                <span>45%</span>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar bg-success" style="width: 45%"></div>
-                            </div>
-                        </div>
-                    </div>
+          <div class="content-card">
+            <h4 class="mb-3">시스템 리소스</h4>
+            <div class="mb-3">
+              <div class="d-flex justify-content-between mb-1">
+                <span>CPU 사용률</span>
+                <span>65%</span>
+              </div>
+              <div class="progress">
+                <div class="progress-bar bg-info" style="width: 65%"></div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <div class="d-flex justify-content-between mb-1">
+                <span>메모리 사용률</span>
+                <span>78%</span>
+              </div>
+              <div class="progress">
+                <div class="progress-bar bg-warning" style="width: 78%"></div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <div class="d-flex justify-content-between mb-1">
+                <span>디스크 사용률</span>
+                <span>45%</span>
+              </div>
+              <div class="progress">
+                <div class="progress-bar bg-success" style="width: 45%"></div>
+              </div>
+            </div>
+          </div>
 
-                    <!-- 스크롤 테스트를 위한 추가 컨텐츠 -->
-                    <div class="content-card">
-                        <h4 class="mb-3">추가 정보</h4>
-                        <p>이 영역은 수직 스크롤을 테스트하기 위한 컨텐츠입니다.</p>
-                        <p>컨텐츠가 많아지면 메인 영역만 스크롤되고, 헤더와 푸터는 고정됩니다.</p>
-                        <p>사이드바도 독립적으로 스크롤이 가능하여 메뉴 항목이 많아도 문제없이 사용할 수 있습니다.</p>
-                        <p class="mb-0">Spring Boot 4와 JDK 25 기반의 백엔드 API와 연동하여 실시간 데이터를 표시할 수 있습니다.</p>
-                    </div>
-                </div>
-            </main>
+          <!-- 스크롤 테스트를 위한 추가 컨텐츠 -->
+          <div class="content-card">
+            <h4 class="mb-3">추가 정보</h4>
+            <p>이 영역은 수직 스크롤을 테스트하기 위한 컨텐츠입니다.</p>
+            <p>
+              컨텐츠가 많아지면 메인 영역만 스크롤되고, 헤더와 푸터는
+              고정됩니다.
+            </p>
+            <p>
+              사이드바도 독립적으로 스크롤이 가능하여 메뉴 항목이 많아도
+              문제없이 사용할 수 있습니다.
+            </p>
+            <p class="mb-0">
+              Spring Boot 4와 JDK 25 기반의 백엔드 API와 연동하여 실시간
+              데이터를 표시할 수 있습니다.
+            </p>
+          </div>
         </div>
+      </main>
     </template>
     <template id="footer-template">
-        <!-- 고정 푸터 -->
-        <footer class="footer">
-            <div class="container-fluid">
-                <p class="mb-0">&copy; 2025 Company Name. All rights reserved.</p>
-            </div>
-        </footer>
+      <!-- 고정 푸터 -->
+      <footer class="footer">
+        <div class="container-fluid">
+          <p class="mb-0">&copy; 2025 Company Name. All rights reserved.</p>
+        </div>
+      </footer>
     </template>
-</body>
+  </body>
 </html>
